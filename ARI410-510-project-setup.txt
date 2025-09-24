@@ -1,0 +1,22 @@
+ARI410-510 Project Setup
+
+Project Title:
+Automated Expense Categorization
+
+Task Definition:
+The goal of this project is to build a machine learning model that classifies financial transactions into categories such as groceries, dining, transportation, and utilities. This is framed as a multi-class classification task, where the input features (e.g., vendor, amount, date) are used to predict the category label.
+
+How ML Contributes:
+Expense categorization is traditionally done manually or through simple rule-based systems. Machine learning can improve accuracy by identifying patterns in past transactions and generalizing them to new cases. This enables automation of the categorization process, saving time and improving financial management. The approach also opens the door to future extensions, such as fraud detection and expense prediction.
+
+Data Source Management:
+We plan to use publicly available datasets, including:
+- Kaggle Personal Finance Dataset (transactions with labeled categories)
+- Kaggle Credit Card Fraud Detection Dataset (for potential extension into fraud detection)
+We may also generate synthetic transactions to augment the dataset and balance underrepresented categories.
+
+Team Members:
+- Philip Haapala
+- Grant Finn
+
+(Since this is a 2-person team, no Scrum roles are required.)
