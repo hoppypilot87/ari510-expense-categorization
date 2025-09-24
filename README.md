@@ -31,5 +31,4 @@ Synthetic data may also be generated to augment underrepresented categories.
 ## Status
 🚧 Project in progress (Sept–Dec 2025)
 
-## Status
-🚧 Project in progress (Sept–Dec 2025)  
+ 
