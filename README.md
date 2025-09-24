@@ -20,14 +20,16 @@ Synthetic data may also be generated to augment underrepresented categories.
 - **Grant Finn**  
 
 ## Project Structure
-ari510-expense-categorization/
 
--├── data/                 # raw and processed datasets
--├── notebooks/            # Jupyter notebooks (EDA, modeling, evaluation)
--├── src/                  # Python scripts (preprocessing, training, utils)
--├── reports/              # project write-ups, drafts, and slides
--├── requirements.txt      # dependencies
--└── README.md             # project overview
+- `data/` – raw and processed datasets  
+- `notebooks/` – Jupyter notebooks (EDA, modeling, evaluation)  
+- `src/` – Python scripts (preprocessing, training, utils)  
+- `reports/` – project write-ups, drafts, and slides  
+- `requirements.txt` – dependencies  
+- `README.md` – project overview  
+
+## Status
+🚧 Project in progress (Sept–Dec 2025)
 
 ## Status
 🚧 Project in progress (Sept–Dec 2025)  
