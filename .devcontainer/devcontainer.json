@@ -1,0 +1,14 @@
+{
+  "name": "AI510 ML Dev",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -U pip && pip install -r requirements.txt || true"
+}
