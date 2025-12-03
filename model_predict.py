@@ -115,7 +115,7 @@ def predict_category_from_vector(x_numeric: np.ndarray) -> str:
 # (useful for quick smoke tests)
 # -------------------------------------------------------------------
 
-def _build_feature_matrix(df: pd.DataFrame) -> pd.DataFrame:
+def _build_feature_matrix(df: pd.DataFrame):
     """
     Replicate the feature construction used in 03_model_tuning.ipynb:
     - Drop ID-like columns
@@ -124,7 +124,15 @@ def _build_feature_matrix(df: pd.DataFrame) -> pd.DataFrame:
     """
     TARGET_COL = "category"
 
-    ID_CANDIDATES = ["entity_id", "txn_id", "user_id", "index", "id"]
+    # Add transaction_id here so it doesn't go into the scaler
+    ID_CANDIDATES = [
+        "entity_id",
+        "txn_id",
+        "user_id",
+        "index",
+        "id",
+        "transaction_id",   # <--- NEW
+    ]
 
     drop_cols = []
     for c in df.columns:
