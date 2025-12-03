@@ -1,9 +1,17 @@
+# Core scientific stack
 numpy
 pandas
 scikit-learn
+joblib
+
+# Visualization (EDA)
 matplotlib
 seaborn
-imbalanced-learn
-tqdm
+
+# Jupyter Notebooks
 jupyter
 ipykernel
+
+# Utilities
+tqdm
+
