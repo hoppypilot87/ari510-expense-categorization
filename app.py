@@ -1,6 +1,7 @@
 import gradio as gr
 import numpy as np
 from typing import List, Optional
+import pandas as pd
 
 from model_predict import (
     predict_category_from_vector,
@@ -51,6 +52,47 @@ def build_example_vector(feature_names: Optional[List[str]]) -> str:
     if not feature_names:
         return ""
     return ", ".join(["0" for _ in feature_names])
+
+
+def predict_batch_csv(csv_file) -> pd.DataFrame:
+    """Process a CSV file and return predictions for each row."""
+    if csv_file is None:
+        return pd.DataFrame({"error": ["Please upload a CSV file"]})
+    
+    try:
+        # Read the CSV file
+        df = pd.read_csv(csv_file)
+        
+        # Check if 'amount' column exists
+        if 'amount' not in df.columns:
+            return pd.DataFrame({
+                "error": [f"CSV must have an 'amount' column. Found columns: {', '.join(df.columns)}"]
+            })
+        
+        # Run predictions on each row
+        predictions = []
+        for idx, row in df.iterrows():
+            try:
+                amount = float(row['amount'])
+                pred = predict_category_from_vector(np.array([amount]))
+                predictions.append({
+                    'Row #': idx + 1,
+                    'Amount': f"${amount:.2f}",
+                    'Predicted Category': pred
+                })
+            except Exception as e:
+                predictions.append({
+                    'Row #': idx + 1,
+                    'Amount': str(row['amount']),
+                    'Predicted Category': f"❌ Error: {str(e)}"
+                })
+        
+        return pd.DataFrame(predictions)
+    
+    except Exception as e:
+        return pd.DataFrame({
+            "error": [f"Error processing file: {str(e)}"]
+        })
 
 
 feature_names = load_feature_names()
@@ -243,6 +285,26 @@ with gr.Blocks() as demo:
     # Wire up interactions
     predict_btn.click(fn=predict_from_csv_vector, inputs=inp, outputs=out)
     clear_btn.click(fn=lambda: "", inputs=None, outputs=inp)
+    
+    # CSV Batch Prediction Section
+    gr.Markdown("---")
+    gr.Markdown(
+        """
+        <div class="info-box">
+        <h3 style="margin-top: 0;">📁 Batch Predictions (CSV Upload)</h3>
+        <p style="margin-bottom: 0;">Upload a CSV file with an 'amount' column to get predictions for multiple rows at once</p>
+        </div>
+        """
+    )
+    
+    with gr.Row():
+        csv_file = gr.File(label="📤 Upload CSV File", file_types=[".csv"])
+        predict_csv_btn = gr.Button("🚀 Run Batch Prediction", variant="primary")
+    
+    csv_results = gr.Dataframe(label="📊 Prediction Results", interactive=False)
+    
+    # Wire up CSV batch prediction
+    predict_csv_btn.click(fn=predict_batch_csv, inputs=csv_file, outputs=csv_results)
 
 if __name__ == "__main__":
     demo.launch()
