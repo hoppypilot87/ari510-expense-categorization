@@ -15,3 +15,6 @@ ipykernel
 # Utilities
 tqdm
 
+
+gradio
+

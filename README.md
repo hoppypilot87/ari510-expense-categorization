@@ -103,7 +103,13 @@ python model_predict.py
 === Demo predictions on random subset ===
 Row 8338: true = Shopping     | predicted = DiningOut
 Row 5516: true = Utilities    | predicted = Utilities
-...
+
+Gradio
+ run:
+ pip install gradio
+ run app.py file
+ Open in browser
+ 
 HW3 (Annotation)
 
 Included:
