@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluation</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #333; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 30px; }
+        h3 { color: #777; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        ul { margin-left: 20px; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+<h1>Evaluation Criteria</h3></h2></h1><h2>Metrics</p><p>Your model will be evaluated using multiple classification metrics:</p><h3>Primary Metric: Accuracy
+The main ranking metric is classification accuracy - the percentage of correctly classified transactions.</p><h3>Secondary Metrics</p><p>1. <strong>F1 Score (Weighted)</strong>: Weighted average F1 score across all categories
+2. <strong>F1 Score (Macro)</strong>: Unweighted average F1 score across all categories
+3. <strong>Precision (Weighted)</strong>: Weighted average precision
+4. <strong>Recall (Weighted)</strong>: Weighted average recall
+5. <strong>Duration</strong>: Training + prediction time (lower is better)</p><h2>Scoring Process</p><p>1. Your model is initialized with the <code>Model()</code> constructor
+2. The <code>fit(X_train, y_train)</code> method is called with training data
+3. The <code>predict(X_test)</code> method is called to generate predictions
+4. Predictions are compared against ground truth labels
+5. All metrics are calculated and displayed on the leaderboard</p><h2>Leaderboard</p><p>The leaderboard displays all metrics and ranks participants by accuracy.</p><h3>Tiebreakers</p><p>If two submissions have the same accuracy:
+1. Higher F1 Score (Weighted)
+2. Lower Duration</p><h2>What Gets Scored</p><ul>
+<li>Integer predictions from 0 to 11</li>
+<li>Predictions must match the number of test samples</li>
+<li>Invalid predictions will receive a score of 0</li>
+</ul>
+</p>
+</body>
+</html>

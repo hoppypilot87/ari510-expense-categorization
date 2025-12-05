@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rules</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #333; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 30px; }
+        h3 { color: #777; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        ul { margin-left: 20px; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+<h1>Competition Rules</h3></h2></h1><h2>Submission Requirements</p><h3>File Structure</p><p>Your submission must be a ZIP file containing:
+<ul>
+<li><strong>model.py</strong> (required): Python file with your Model class</li>
+<li><strong>requirements.txt</strong> (optional): Python package dependencies</li>
+</ul><h3>Model Class Requirements</p><p>Your <code>model.py</code> must contain a class named <code>Model</code> with the following methods:</p><pre><code>python
+class Model:
+    def __init__(self):
+        <h1>Initialize your model
+        pass</p><p>    def fit(self, X_train, y_train):
+        <h1>Train your model
+        <h1>X_train: numpy array of shape (n_samples, n_features)
+        <h1>y_train: numpy array of shape (n_samples,) with integer labels
+        pass</p><p>    def predict(self, X_test):
+        <h1>Generate predictions
+        <h1>X_test: numpy array of shape (n_samples, n_features)
+        <h1>Returns: numpy array of shape (n_samples,) with integer predictions
+        return predictions
+</code></pre><h2>Allowed Libraries</p><p>You may use any Python libraries available in the competition Docker environment, including:
+<ul>
+<li>numpy</li>
+<li>pandas</li>
+<li>scikit-learn</li>
+<li>scipy</li>
+<li>xgboost</li>
+<li>lightgbm</li>
+<li>tensorflow</li>
+<li>pytorch</li>
+</ul><p>If you need additional libraries, specify them in <code>requirements.txt</code>.</p><h2>Submission Limits</p><ul>
+<li><strong>Maximum submissions per day</strong>: 5</li>
+<li><strong>Total maximum submissions</strong>: 100</li>
+<li><strong>Execution time limit</strong>: 10 minutes</li>
+<li><strong>Memory limit</strong>: 8 GB</li>
+</ul><h2>Code of Conduct</p><ul>
+<li>Do not attempt to access or manipulate test labels</li>
+<li>Do not submit pre-trained models that use external data</li>
+<li>Model must train from scratch using only the provided training data</li>
+<li>Fair play and academic integrity are expected</li>
+</ul><h2>Disqualification</p><p>Submissions will be disqualified for:
+<ul>
+<li>Attempting to hack the evaluation system</li>
+<li>Using test set labels during training</li>
+<li>Sharing solutions publicly during the competition</li>
+<li>Violating submission limits</li>
+</ul><h2>Questions</p><p>If you have questions about the rules or technical issues, please use the competition forum.
+</p>
+</body>
+</html>

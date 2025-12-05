@@ -1,0 +1,10 @@
+0: amount
+1: log_amount
+2: amount_squared
+3: payment_method_encoded
+4: state_encoded
+5: vendor_encoded
+6: description_length
+7: day_of_week
+8: month
+9: day_of_month

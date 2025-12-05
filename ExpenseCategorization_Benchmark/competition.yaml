@@ -1,0 +1,70 @@
+version: 2
+title: Automated Expense Categorization Challenge
+description: Build a machine learning model to automatically categorize financial transactions
+image: logo.png
+registration_auto_approve: True
+
+terms: pages/terms.html
+pages:
+  - title: Overview
+    file: pages/overview.html
+  - title: Data
+    file: pages/data.html
+  - title: Evaluation
+    file: pages/evaluation.html
+  - title: Rules
+    file: pages/rules.html
+
+tasks:
+  - index: 0
+    name: Expense Category Prediction
+    description: Predict the category of financial transactions
+    input_data: public_data/
+    reference_data: public_data/
+    ingestion_program: ingestion_program/
+    scoring_program: scoring_program/
+
+solutions:
+  - index: 0
+    tasks:
+      - 0
+    path: starting_kit/
+
+phases:
+  - name: Development Phase
+    description: Practice and develop your model
+    start: 1-1-2025
+    end: 12-31-2025
+    max_submissions_per_day: 5
+    max_submissions: 100
+    tasks:
+      - 0
+
+leaderboards:
+  - title: Results
+    key: main
+    columns:
+      - title: Accuracy
+        key: accuracy
+        index: 0
+        sorting: desc
+      - title: F1 Score (Weighted)
+        key: f1_weighted
+        index: 1
+        sorting: desc
+      - title: F1 Score (Macro)
+        key: f1_macro
+        index: 2
+        sorting: desc
+      - title: Precision
+        key: precision
+        index: 3
+        sorting: desc
+      - title: Recall
+        key: recall
+        index: 4
+        sorting: desc
+      - title: Duration
+        key: duration
+        index: 5
+        sorting: asc

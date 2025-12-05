@@ -1,0 +1,12 @@
+0: Bills
+1: DiningOut
+2: Education
+3: Entertainment
+4: Groceries
+5: Healthcare
+6: Miscellaneous
+7: PersonalCare
+8: Shopping
+9: Transport
+10: Travel
+11: Utilities
