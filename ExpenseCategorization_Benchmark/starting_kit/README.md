@@ -1,83 +1,30 @@
-# Starting Kit - Expense Categorization Challenge
+# Starting Kit - Expense Categorization
 
-This starting kit contains a baseline solution to help you get started.
+This starting kit provides a simple baseline model to help you get started.
 
 ## Files
 
-- `model.py`: Baseline Random Forest model
-- `requirements.txt`: Required Python packages
+- baseline_model.py: A simple Random Forest classifier baseline
 
 ## How to Use
 
-1. **Test locally** (optional):
-   - Download the public data
-   - Run the ingestion and scoring programs locally
-   - Verify your model works
-
-2. **Modify the model**:
-   - Edit `model.py` to implement your own solution
-   - Keep the same class structure (Model with fit() and predict() methods)
-   - Add any required packages to `requirements.txt`
-
-3. **Submit**:
-   - Zip `model.py` and `requirements.txt`
-   - Upload to the competition platform
-   - Check the leaderboard for results
+1. Copy the baseline model and rename it to model.py
+2. Modify the model to improve performance
+3. Create a ZIP file containing your model.py and requirements.txt
+4. Submit the ZIP to Codabench
 
 ## Model Requirements
 
-Your `Model` class must have:
+Your model.py must contain a class called Model with fit() and predict() methods.
 
-```python
-class Model:
-    def __init__(self):
-        # Initialize your model
-        pass
+## Input Features
 
-    def fit(self, X_train, y_train):
-        # Train on data
-        # X_train: numpy array (n_samples, n_features)
-        # y_train: numpy array (n_samples,) with integers 0-11
-        pass
-
-    def predict(self, X_test):
-        # Return predictions
-        # X_test: numpy array (n_samples, n_features)
-        # Returns: numpy array (n_samples,) with integers 0-11
-        return predictions
-```
-
-## Tips for Improvement
-
-1. **Feature Engineering**: Create additional features from the data
-2. **Hyperparameter Tuning**: Optimize model parameters
-3. **Different Algorithms**: Try XGBoost, LightGBM, Neural Networks
-4. **Ensemble Methods**: Combine multiple models
-5. **Cross-validation**: Use proper validation to avoid overfitting
-
-## Testing Locally
-
-You can test your model before submitting:
-
-```python
-import numpy as np
-from model import Model
-
-# Load data
-X_train = np.genfromtxt('training_data')
-y_train = np.genfromtxt('training_label')
-X_test = np.genfromtxt('testing_data')
-
-# Train and predict
-m = Model()
-m.fit(X_train, y_train)
-predictions = m.predict(X_test)
-
-# Evaluate
-from sklearn.metrics import accuracy_score
-y_test = np.genfromtxt('testing_label')  # Not available in competition
-accuracy = accuracy_score(y_test, predictions)
-print(f"Accuracy: {accuracy:.4f}")
-```
+The competition data includes 6 features:
+- vendor (text): Merchant name
+- description (text): Transaction description
+- amount (numeric): Transaction amount
+- payment_method (categorical): Payment method
+- city (categorical): City
+- state (categorical): State
 
 Good luck!

@@ -19,10 +19,12 @@ tasks:
   - index: 0
     name: Expense Category Prediction
     description: Predict the category of financial transactions
+    is_scoring_only: false
     input_data: public_data/
     reference_data: public_data/
     ingestion_program: ingestion_program/
     scoring_program: scoring_program/
+    ingestion_only_during_scoring: false
 
 solutions:
   - index: 0

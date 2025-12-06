@@ -1,0 +1,7 @@
+Features (6 total):
+  - vendor (text): Merchant/vendor name
+  - description (text): Transaction description
+  - amount (numeric): Transaction amount
+  - payment_method (categorical): Payment method
+  - city (categorical): City
+  - state (categorical): State

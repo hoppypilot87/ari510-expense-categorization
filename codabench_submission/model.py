@@ -63,6 +63,7 @@ class Model:
                     "clf",
                     LogisticRegression(
                         max_iter=1000,
+                        solver='lbfgs',
                         multi_class="multinomial",
                         n_jobs=-1,
                     ),
